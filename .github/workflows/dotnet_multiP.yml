@@ -34,11 +34,9 @@ jobs:
     - name: Build
       run: dotnet build ./NLPTextTool/ --configuration Release --no-restore
     
-    - name: zip
-      run: zip -r release.zip ./NLPTextTool/bin
     
     - name: upload
       uses: actions/upload-artifact@v4
       with:
             name: upload
-            path: release.zip
+            path: ./NLPTextTool/bin
